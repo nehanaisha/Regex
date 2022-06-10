@@ -13,6 +13,7 @@ public class Username {
 		obj.firstname();
 		obj.lastname();
 		obj.mobileNumber();
+		obj.password();
 	}
 
 	void firstname() {
@@ -47,9 +48,22 @@ public class Username {
 		String number = sc.nextLine();
 		Matcher matcher = pattern.matcher(number);
 		if (matcher.matches()) {
-			System.out.println("lastname " + number + " is valid");
+			System.out.println("MobileNumber " + number + " is valid");
 		} else {
-			System.out.println("lastname " + number + " is invalid");
+			System.out.println("MobileNumber " + number + " is invalid");
+
+		}
+
+	}
+	void password() {
+		Pattern pattern = Pattern.compile("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&()–[{}]:;',?/*~$^+=<>]).{8,20}$");
+		System.out.println("enter the password");
+		String password = sc.nextLine();
+		Matcher matcher = pattern.matcher(password);
+		if (matcher.matches()) {
+			System.out.println("MobileNumber " + password + " is valid");
+		} else {
+			System.out.println("MobileNumber " + password + " is invalid");
 
 		}
 
