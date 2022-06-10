@@ -12,6 +12,7 @@ public class Username {
 		Username obj = new Username();
 		obj.firstname();
 		obj.lastname();
+		obj.mobileNumber();
 	}
 
 	void firstname() {
@@ -39,4 +40,19 @@ public class Username {
 		}
 
 	}
+
+	void mobileNumber() {
+		Pattern pattern = Pattern.compile("/^([+]\\d{2}[ ])?\\d{10}$/");
+		System.out.println("enter the mobile number ");
+		String number = sc.nextLine();
+		Matcher matcher = pattern.matcher(number);
+		if (matcher.matches()) {
+			System.out.println("lastname " + number + " is valid");
+		} else {
+			System.out.println("lastname " + number + " is invalid");
+
+		}
+
+	}
+
 }
